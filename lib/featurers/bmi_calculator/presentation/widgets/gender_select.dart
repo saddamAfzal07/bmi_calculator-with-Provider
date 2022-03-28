@@ -44,8 +44,9 @@ class _GenderSelectState extends State<GenderSelect> {
                     ),
                     margin: const EdgeInsets.all(5),
                     decoration: BoxDecoration(
-                        color:
-                            value.male ? Colors.yellow : Colors.lightBlueAccent,
+                        color: value.gender
+                            ? Colors.yellow
+                            : Colors.lightBlueAccent,
                         borderRadius: BorderRadius.circular(10)),
                   ),
                 )),
@@ -76,7 +77,7 @@ class _GenderSelectState extends State<GenderSelect> {
                     ),
                     margin: const EdgeInsets.all(5),
                     decoration: BoxDecoration(
-                        color: value.female
+                        color: !value.gender
                             ? Colors.yellow
                             : Colors.lightBlueAccent,
                         borderRadius: BorderRadius.circular(10)),
