@@ -42,7 +42,7 @@ class _BmiResultState extends State<BmiResult> {
           children: [
             Text(
               "Gender : ${widget.gender}",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const Text(
               "BMI Result",
@@ -52,24 +52,20 @@ class _BmiResultState extends State<BmiResult> {
               height: 20,
             ),
             SizedBox(
-                width: 250,
-                height: 250,
-                child: widget.gender == "Male"
-                    ? Image.asset(
-                        "assets/images/male.jpg",
-                        fit: BoxFit.contain,
-                      )
-                    : widget.gender == "Female"
-                        ? Image.asset(
-                            "assets/images/bmi.jpg",
-                            fit: BoxFit.contain,
-                          )
-                        : Image.asset(
-                            "assets/images/normal.jpg",
-                            fit: BoxFit.contain,
-                          )),
+              width: 250,
+              height: 250,
+              child: widget.gender.compareTo("Male") == 0
+                  ? Image.asset(
+                      "assets/images/male.jpg",
+                      fit: BoxFit.contain,
+                    )
+                  : Image.asset(
+                      "assets/images/bmi.jpg",
+                      fit: BoxFit.contain,
+                    ),
+            ),
             Text(
-              "${bmivalue.toStringAsFixed(1)}",
+              bmivalue.toStringAsFixed(1),
               style: const TextStyle(
                 fontSize: 50,
                 fontWeight: FontWeight.bold,

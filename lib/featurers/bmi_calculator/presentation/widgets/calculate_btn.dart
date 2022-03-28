@@ -21,11 +21,10 @@ class _CalculateBtnState extends State<CalculateBtn> {
             context,
             MaterialPageRoute(
                 builder: (context) => BmiResult(
-                      age: state.age,
-                      height: state.slideralue,
-                      weight: state.weight,
-                      gender: state.gender,
-                    )));
+                    age: state.age,
+                    height: state.slideralue,
+                    weight: state.weight,
+                    gender: state.gender ? "Male" : "Female")));
       },
       child: Container(
         alignment: Alignment.center,

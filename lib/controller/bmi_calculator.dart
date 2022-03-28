@@ -7,10 +7,10 @@ class BmiCal extends ChangeNotifier {
   int age = 25;
   var slideralue = 150;
   double bmivalue = 0;
-
-  bool male = false;
-  bool female = false;
-  String gender = "Not Selected";
+//For gender true==>male false==>female
+  bool gender = true;
+  // bool female = false;
+  // String gender = "Not Selected";
 
   incrementWeight() {
     weight++;
@@ -33,16 +33,16 @@ class BmiCal extends ChangeNotifier {
   }
 
   clickMale() {
-    male = true;
-    female = false;
-    gender = "Male";
+    // male = true;
+    // female = false;
+    gender = true;
     notifyListeners();
   }
 
   clickFemale() {
-    female = true;
-    male = false;
-    gender = "Female";
+    // female = true;
+    // male = false;
+    gender = false;
     notifyListeners();
   }
 }
