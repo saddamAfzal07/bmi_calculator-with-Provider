@@ -58,7 +58,7 @@ class _HeightSelectState extends State<HeightSelect> {
                   Slider(
                       value: state.slideralue.toDouble(),
                       min: 0,
-                      max: 225,
+                      max: 260,
                       onChanged: (value) {
                         setState(() {
                           state.slideralue = value.toInt();

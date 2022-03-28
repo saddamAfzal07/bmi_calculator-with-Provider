@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class BmiCal extends ChangeNotifier {
   int weight = 50;
   int age = 25;
-  var slideralue = 33;
+  var slideralue = 150;
   double bmivalue = 0;
 
   bool male = false;

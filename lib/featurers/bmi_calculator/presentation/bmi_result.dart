@@ -54,10 +54,20 @@ class _BmiResultState extends State<BmiResult> {
             SizedBox(
                 width: 250,
                 height: 250,
-                child: Image.asset(
-                  "assets/images/bmi.jpg",
-                  fit: BoxFit.contain,
-                )),
+                child: widget.gender == "Male"
+                    ? Image.asset(
+                        "assets/images/male.jpg",
+                        fit: BoxFit.contain,
+                      )
+                    : widget.gender == "Female"
+                        ? Image.asset(
+                            "assets/images/bmi.jpg",
+                            fit: BoxFit.contain,
+                          )
+                        : Image.asset(
+                            "assets/images/normal.jpg",
+                            fit: BoxFit.contain,
+                          )),
             Text(
               "${bmivalue.toStringAsFixed(1)}",
               style: const TextStyle(
@@ -65,7 +75,12 @@ class _BmiResultState extends State<BmiResult> {
                 fontWeight: FontWeight.bold,
                 color: Colors.lightBlueAccent,
               ),
-            )
+            ),
+            bmivalue < 18.5
+                ? const Text("You are underweighted")
+                : bmivalue > 18.5 && bmivalue < 24.9
+                    ? const Text("BMI is normal")
+                    : const Text("You are overweighted"),
           ],
         ),
       ),
